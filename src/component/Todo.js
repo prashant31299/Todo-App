@@ -28,11 +28,17 @@ function Todo(){
         <div className="todo">
 
             <input type='text' placeholder="Text..."
+                  onKeyDown={(event)=> {
+                    if (event.keyCode ==13){
+                        AddTask()
+                    }
+                }}
             ref={inputval}
             onChange={(event)=>{
                 setcurrentTodo(event.target.value)
             }}/>
             <button
+          
                 onClick={AddTask}
             > Add me</button>
             <hr/>
